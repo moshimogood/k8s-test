@@ -1,0 +1,13 @@
+apiversion: v1
+kind: Service
+metadata:
+  name: sampleService
+spec:
+  type: NodePort
+  ports:
+    - port: 8099
+      targetPort: 80
+      protocol: TCP
+      nodePort: 30080
+  selector:
+    app: samplekube
