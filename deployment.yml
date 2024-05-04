@@ -1,9 +1,7 @@
-apiversion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sampledep
-  labels:
-    app: samplekube
 spec:
   selector:
     matchLabels:
@@ -11,13 +9,12 @@ spec:
   replicas: 3
   template:
     metadata:
-    name: samplepod
-    labels:
-      app: samplekube
-      spec:
-        containers:
-          - name: samplecontainer
-            image: httpd
-            ports:
-              - containerPort: 80
+      labels:
+         app: samplekube
+    spec:
+      containers:
+        - name: samplecontainer
+          image: httpd
+          ports:
+          - containerPort: 80
 
